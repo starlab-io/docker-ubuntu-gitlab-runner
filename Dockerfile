@@ -6,8 +6,7 @@ MAINTAINER Farhan Patwa <farhan.patwa@starlab.io>
 # Install and configure sshd.
 # https://docs.docker.com/engine/examples/running_ssh_service for reference.
 # --------------------------------------------------------------------------
-RUN apt-get install -y openssh-server && \
-    mkdir -p /run/sshd
+RUN apt-get install -y openssh-server
 
 EXPOSE 22
 
