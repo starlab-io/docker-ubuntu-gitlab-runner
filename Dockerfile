@@ -1,12 +1,15 @@
 FROM starlabio/ubuntu-native-build:38
 MAINTAINER Farhan Patwa <farhan.patwa@starlab.io>
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV USER root
 
 # --------------------------------------------------------------------------
 # Install and configure sshd.
 # https://docs.docker.com/engine/examples/running_ssh_service for reference.
 # --------------------------------------------------------------------------
-RUN apt-get install -y openssh-server
+RUN apt-get update && \
+    apt-get install -y openssh-server
 
 EXPOSE 22
 
